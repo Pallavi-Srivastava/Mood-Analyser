@@ -1,7 +1,5 @@
 package com.blz.moodanalyzer;
 
-import java.util.Scanner;
-
 public class Mood {
 
 	String message;
@@ -15,18 +13,9 @@ public class Mood {
 		super();
 	}
 
-	public String analyseAbility() {
-		if (message.contains("Happy"))
-			return "Happy";
-		return "Sad";
-	}
-
-	public static void main(String[] args) {
-		System.out.println("Enter your mood condition");
-		Scanner sc = new Scanner(System.in);
-		Mood m = new Mood();
-		m.message = sc.nextLine();
-		String res = m.analyseAbility();
-		System.out.println(res);
+	public String analyseAbility(String message) {
+		if (message.contains("I am in Happy Mood"))
+			return "Sad";
+		return "Happy";
 	}
 }
