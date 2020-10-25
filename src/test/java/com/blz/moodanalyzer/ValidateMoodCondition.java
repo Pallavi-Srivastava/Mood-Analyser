@@ -9,25 +9,28 @@ public class ValidateMoodCondition {
 
 	// Validation for SadMood
 	@Test
-	public void testCallingAnalyseAbilityMethodWithNoParams_thenAssertionHappy() {
+	public void testCallingAnalyseAbilityMethodWithNoParams_thenAssertionSad() throws MoodAnalysisException {
 		md = new Mood();
-		try {
-			String mood = md.analyseAbility("Sad");
-			assertEquals("Happy", mood);
-		} catch (NullPointerException e) {
-			System.out.println(e.getMessage());
-		}
+		String mood = md.analyseAbility("I am in Sad Mood");
+		assertEquals("Sad", mood);
 	}
 
 	// Validation for HappyMood
 	@Test
-	public void testCallingAnalyseAbilityMethodWithNoParams_thenAssertionSad() {
+	public void testCallingAnalyseAbilityMethodWithNoParams_thenAssertionHappy() throws MoodAnalysisException {
 		md = new Mood();
+		String mood = md.analyseAbility("I am in Happy Mood");
+		assertEquals("Happy", mood);
+	}
+
+	// Validation for HappyMood(By Passing Null)
+	@Test
+	public void testCallingAnalyseAbilityMethodWithNull_thenAssertionHappy() {
 		try {
-			String mood = md.analyseAbility("Happy");
-			assertEquals("Happy", mood);
-		} catch (NullPointerException e) {
-			System.out.println(e.getMessage());
+			md = new Mood();
+			String mood = md.analyseAbility(null);
+		} catch (MoodAnalysisException e) {
+			assertEquals("Invalid mood", e.getMessage());
 		}
 	}
 }
