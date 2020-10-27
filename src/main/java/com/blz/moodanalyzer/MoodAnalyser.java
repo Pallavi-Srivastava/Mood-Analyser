@@ -1,15 +1,15 @@
 package com.blz.moodanalyzer;
 
-public class Mood {
+public class MoodAnalyser {
 
 	String message;
 
-	public Mood(String message) {
+	public MoodAnalyser(String message) {
 		super();
 		this.message = message;
 	}
 
-	public Mood() {
+	public MoodAnalyser() {
 		super();
 	}
 
