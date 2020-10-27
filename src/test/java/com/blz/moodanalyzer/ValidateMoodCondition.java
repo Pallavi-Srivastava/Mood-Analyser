@@ -5,12 +5,12 @@ import org.junit.Test;
 
 public class ValidateMoodCondition {
 
-	static Mood md;
+	static MoodAnalyser md;
 
 	// Validation for SadMood
 	@Test
 	public void testCallingAnalyseAbilityMethodWithNoParams_thenAssertionSad() {
-		md = new Mood();
+		md = new MoodAnalyser();
 		String mood = md.analyseAbility("I am in Sad Mood");
 		assertEquals("Sad", mood);
 	}
@@ -18,7 +18,7 @@ public class ValidateMoodCondition {
 	// Validation for HappyMood
 	@Test
 	public void testCallingAnalyseAbilityMethodWithNoParams_thenAssertionHappy() {
-		md = new Mood();
+		md = new MoodAnalyser();
 		String mood = md.analyseAbility("I am in Happy Mood");
 		assertEquals("Happy", mood);
 	}
@@ -26,7 +26,7 @@ public class ValidateMoodCondition {
 	// Validation for HappyMood(By Passing Null)
 	@Test
 	public void testCallingAnalyseAbilityMethodWithNull_thenAssertionHappy() {
-		md = new Mood();
+		md = new MoodAnalyser();
 		try {
 			String mood = md.analyseAbility(null);
 			assertEquals("Happy", null);
